@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:alpine'
+    environment:
+      POSTGRES_DB: cdc
+      POSTGRES_HOST: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+
+volumes:
+  postgres-volume:
